@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" lang="es">
+<title>Insert title here</title>
+</head>
+<head th:replace="./components/main.html ::	styles"></head>
+<body>
+
+	<h1>Registrar usuario</h1>
+	<form th:action="#" method="post" th:object="*{usuario}">
+		<input type="text" name="Nombres">
+		<input type="text" name="Apellidos">
+		<input type="text" name="Correo">
+		<input type="Date" name="Nacimiento">
+	</form>
+
+</body>
+</html>
