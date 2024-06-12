@@ -3,6 +3,7 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+bin/
 
 ### STS ###
 .apt_generated
@@ -12,6 +13,9 @@ target/
 .settings
 .springBeans
 .sts4-cache
+
+### Eclipse ###
+.settings/
 
 ### IntelliJ IDEA ###
 .idea
@@ -33,3 +37,4 @@ nb-configuration.xml
 
 ### VS Code ###
 .vscode/
+.env
