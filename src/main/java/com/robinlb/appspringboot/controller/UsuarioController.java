@@ -1,23 +1,25 @@
 package com.robinlb.appspringboot.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.robinlb.appspringboot.model.Post;
-import com.robinlb.appspringboot.service.IPostService;
+import com.robinlb.appspringboot.model.Usuario;
+import com.robinlb.appspringboot.service.IUsuarioService;
 
-@RequestMapping("/Usuario")
+@Controller
+@RequestMapping("Usuario")
 public class UsuarioController {
 
 	@Autowired
-	private IPostService service;
+	private IUsuarioService service;
 	
-	@PostMapping("publicar")
-	public String postear(Post post) {
-		service.guardar(post);
-		return "";
+	@PostMapping("registrar")
+	public String registrarUsuario(Usuario usuario) {
+		service.guardar(usuario);
+		return "redirect:/main";
 	}
 	
 	@PostMapping("eliminar")
