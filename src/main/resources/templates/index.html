@@ -2,17 +2,24 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta content="text/html" charset="UTF-8" lang="es">
-<title>Insert title here</title>
+<title>Principal</title>
 </head>
 <head th:insert="~{./components/main.html :: styles}"></head>
 <body>
 
 	<h1>Hola mundo</h1>
 
+	<div th:if="${registroExitoso != null}">
+		<span th:if="${registroExitoso}"
+			th:style="'color:red;'">¡Registro exitoso!</span>
+		<span th:unless="${registroExitoso}"
+			th:style="'color:red;'">Error al registrar.</span>
+	</div>
+
 	<ul>
-	  <li><a th:href="@{/registrar}">Registrarse</a></li>
-	  <li><a th:href="@{/publicar}">Publicar</a></li>
+		<li><a th:href="@{/registrar}">Registrarse</a></li>
+		<li><a th:href="@{/publicar}">Publicar</a></li>
 	</ul>
-	
+
 </body>
 </html>
