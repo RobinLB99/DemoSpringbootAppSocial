@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<meta content="text/html; charset=UTF-8" lang="es">
+<title>Realizar una publicación</title>
 </head>
+<head th:insert="~{./components/main.html :: styles}"></head>
 <body>
-
+	<h3>Nueva publicación</h3>
+	
+	<form th:action="@{/Post/publicar}" method="post" th:object="${post}">
+		Contenido: <br>
+		<textarea rows="15" cols="80" name="contenido_" th:field="*{contenido}"></textarea>
+		<br>
+		<input type="file" name="imagenes_" accept="image/*" th:field="*{pictures}" />
+		<hr>
+		<input type="text"> 
+		<button type="submit">Publicar</button>
+	</form>
 </body>
 </html>
